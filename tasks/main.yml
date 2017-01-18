@@ -1,2 +1,57 @@
 ---
 # tasks file for ansible-role-tint2
+
+- name: Install software on Fedora
+  when: ansible_distribution == 'Fedora'
+  become: true
+  dnf:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  with_items:
+  - { name: 'tint2', state: 'present' }
+
+- name: Update software cache for pacman
+  when: ansible_distribution == 'ArchLinux'
+  become: true
+  pacman:
+    update_cache: yes
+
+- name: Install software on ArchLinux
+  when: ansible_distribution == 'ArchLinux'
+  become: true
+  pacman:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  with_items:
+  - { name: 'tint2', state: 'present' }
+
+- name: Update software cache for apt-get
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  become: true
+  apt:
+    update_cache: yes
+
+- name: Install software on Ubuntu
+  when: ansible_distribution == 'Ubuntu'
+  become: true
+  apt:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  with_items:
+  - { name: 'tint2', state: 'present' }
+
+- name: Install software on Debian
+  when: ansible_distribution == 'Debian'
+  become: true
+  apt:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  with_items:
+  - { name: 'tint2', state: 'present' }
+
+- name: Configure tint2
+  template:
+    src: tint2rc.j2
+    dest: "~{{ config_owner }}/.config/tint2/tint2rc"
+    owner: "{{ config_owner }}"
+    mode: 0644

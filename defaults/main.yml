@@ -1,2 +1,4 @@
 ---
 # defaults file for ansible-role-tint2
+
+config_owner: "{{ ansible_user_id }}"
