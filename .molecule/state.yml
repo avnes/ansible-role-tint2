@@ -1,5 +1,5 @@
 ---
-converged: null
+converged: true
 created: true
 default_platform: null
 default_provider: null
@@ -10,20 +10,20 @@ hosts:
     - group1
   ansible-role-tint2-debian-sid:
     groups:
-    - group1
+    - group2
   ansible-role-tint2-debian-stretch:
     groups:
-    - group1
+    - group2
   ansible-role-tint2-fedora-24:
     groups:
-    - group1
+    - group3
   ansible-role-tint2-fedora-25:
     groups:
-    - group1
+    - group3
   ansible-role-tint2-ubuntu-xenial:
     groups:
-    - group1
+    - group4
   ansible-role-tint2-ubuntu-yakkety:
     groups:
-    - group1
+    - group4
 multiple_platforms: null
