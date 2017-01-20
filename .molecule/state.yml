@@ -1,29 +1,8 @@
 ---
-converged: true
-created: true
+converged: null
+created: null
 default_platform: null
 default_provider: null
-driver: docker
-hosts:
-  ansible-role-tint2-arch:
-    groups:
-    - group1
-  ansible-role-tint2-debian-sid:
-    groups:
-    - group2
-  ansible-role-tint2-debian-stretch:
-    groups:
-    - group2
-  ansible-role-tint2-fedora-24:
-    groups:
-    - group3
-  ansible-role-tint2-fedora-25:
-    groups:
-    - group3
-  ansible-role-tint2-ubuntu-xenial:
-    groups:
-    - group4
-  ansible-role-tint2-ubuntu-yakkety:
-    groups:
-    - group4
+driver: null
+hosts: {}
 multiple_platforms: null
