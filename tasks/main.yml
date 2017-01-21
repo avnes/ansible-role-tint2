@@ -53,7 +53,7 @@
 
 - name: Make sure config directory exist
   file:
-    path: "{{ config_owner }}/.config/tint2"
+    path: "~{{ config_owner }}/.config/tint2"
     state: directory
     owner: "{{ config_owner }}"
     group: "{{ config_owner_primary_group }}"
