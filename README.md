@@ -1,6 +1,6 @@
 master: [![Build Status](https://travis-ci.org/avnes/ansible-role-tint2.png?branch=master)](https://travis-ci.org/avnes/ansible-role-tint2) develop: [![Build Status](https://travis-ci.org/avnes/ansible-role-tint2.png?branch=develop)](https://travis-ci.org/avnes/ansible-role-tint2)
 
-# Role Name
+# ansible-role-tint2
 
 Ansible role for installing tint2 and performing basic setup and configuration.
 
