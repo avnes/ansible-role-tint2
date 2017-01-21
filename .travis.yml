@@ -7,8 +7,8 @@ sudo: required
 
 before_install:
  - sudo useradd -d /home/ansible-test-user ansible-test-user
- - sudo mkdir /home/ansible-test-user
- - sudo chown ansible-test-user:ansible-test-user /home/ansible-test-user
+ - sudo mkdir -p /home/ansible-test-user/.config/tint2/
+ - sudo chown -R ansible-test-user:ansible-test-user /home/ansible-test-user
 
 #services:
 #  - docker
