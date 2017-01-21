@@ -33,5 +33,5 @@ script:
   - ansible-playbook -i tests/inventory --syntax-check --list-tasks role.yml
   - ansible-playbook -i tests/inventory --connection=local --sudo -vvvv role.yml
 
-#notifications:
-#  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/

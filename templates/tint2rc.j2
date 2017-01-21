@@ -141,8 +141,8 @@ launcher_icon_asb = {{ launcher_icon_asb }}
 launcher_icon_theme_override = {{ launcher_icon_theme_override }}
 startup_notifications = {{ startup_notifications }}
 launcher_tooltip = {{ launcher_tooltip }}
-{% for app in {{ launcher_item_app }} %}
-  launcher_item_app = {{ app }}
+{% for app in launcher_item_app %}
+launcher_item_app = {{ app }}
 {% endfor %}
 
 #-------------------------------------
