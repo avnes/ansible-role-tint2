@@ -1,5 +1,12 @@
 ---
-- hosts: localhost
-  remote_user: root
+- hosts: all
+  vars:
+    config_owner: ansible-test-user
+    launcher_item_app:
+      - '/usr/share/applications/chromium-browser.desktop'
+      - '/usr/share/applications/pcmanfm.desktop'
+      - '/usr/share/applications/atom.desktop'
+      - '/usr/share/applications/keepassx2.desktop'
+      - '/usr/share/applications/lxterminal.desktop'
   roles:
     - ansible-role-tint2

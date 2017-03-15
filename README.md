@@ -38,37 +38,22 @@ None
 ```
 - hosts: all
   vars:
-    owner: 'maya'
-    app_list:
+    config_owner: 'maya'
+    launcher_item_app:
       - '/usr/share/applications/chromium-browser.desktop'
       - '/usr/share/applications/pcmanfm.desktop'
       - '/usr/share/applications/atom.desktop'
       - '/usr/share/applications/keepassx2.desktop'
       - '/usr/share/applications/lxterminal.desktop'
   roles:
-     - { role: avnes.ansible-role-tint2, config_owner: "{{ owner }}", launcher_item_app: "{{ app_list }}" }
+     - { role: avnes.ansible-role-tint2 }
 ```
 
 ## Test
 
 ```
-ANSIBLE_CONFIG=./role.cfg; export ANSIBLE_CONFIG
-ansible-playbook -i tests/inventory --syntax-check role.yml
-ansible-playbook -i tests/inventory --check --connection=local --sudo -vvvv role.yml -K
-```
-
-## Molecule test
-
-```
 molecule create
 molecule test
-```
-
-## Run
-
-```
-ANSIBLE_CONFIG=./role.cfg; export ANSIBLE_CONFIG
-ansible-playbook -i tests/inventory --connection=local --sudo -vvvv role.yml -K
 ```
 
 ## License

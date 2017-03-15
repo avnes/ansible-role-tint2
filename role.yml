@@ -1,4 +1,0 @@
----
-- hosts: all
-  roles:
-    - { role: ansible-role-tint2, config_owner: 'ansible-test-user' }
