@@ -1,0 +1,5 @@
+FROM fedora:24
+
+RUN dnf update -y \
+&& dnf install -y python2 python2-dnf libselinux-python ansible sudo which tar gzip \
+&& useradd ansible-test-user
