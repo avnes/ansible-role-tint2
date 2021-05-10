@@ -1,6 +1,4 @@
 ---
-# tasks file for ansible-role-tint2
-
 - name: Install software on Fedora
   when: ansible_distribution == 'Fedora'
   become: true

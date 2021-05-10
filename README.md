@@ -6,20 +6,11 @@ Ansible role for installing tint2 and performing basic setup and configuration.
 
 ## Requirements
 
-None for running the role.
-
-In order to continuously develop and test this role, you will need docker, pip, molecule, testinfra and python-docker-py installed.
-
-Install docker, pip and python-docker-py with your distributions package manager. Then install molecule and tesinfra with pip:
-
-```
-pip install molecule
-pip install testinfra
-```
+None.
 
 ## Role Variables
 
-```
+```yaml
 config_owner:
   String (mandatory) to specify the Linux user that should have tint2 setup for them.
 
@@ -35,7 +26,7 @@ None
 
 ## Example Playbook
 
-```
+```yaml
 - hosts: all
   vars:
     config_owner: 'maya'
@@ -51,8 +42,10 @@ None
 
 ## Test
 
-```
-molecule create
+```bash
+virtualenv ~/.virtualenv/ansible-role-tint2
+source ~/.virtualenv/ansible-role-tint2/bin/activate
+pip install -r requirements.txt
 molecule test
 ```
 
