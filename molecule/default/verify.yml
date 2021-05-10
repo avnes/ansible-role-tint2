@@ -6,19 +6,19 @@
   - name: Stat tint2rc
     ansible.builtin.stat:
       path: /home/ansible-test-user/.config/tint2/tint2rc
-    register: stat_conkyrc
+    register: stat_tint2rc
   - name: Assert that tint2rc exists
     assert:
-      that: stat_conkyrc.stat.exists
+      that: stat_tint2rc.stat.exists
   - name: Assert that tint2rc is a regular file
     assert:
-      that: stat_conkyrc.stat.isreg
+      that: stat_tint2rc.stat.isreg
   - name: Assert that tint2rc is owned by user ansible-test-user
     assert:
-      that: stat_conkyrc.stat.pw_name == 'ansible-test-user'
+      that: stat_tint2rc.stat.pw_name == 'ansible-test-user'
   - name: Assert that tint2rc is owned by group ansible-test-user
     assert:
-      that: stat_conkyrc.stat.gr_name == 'ansible-test-user'
+      that: stat_tint2rc.stat.gr_name == 'ansible-test-user'
   - name: Assert that tint2rc has mode 0700
     assert:
-      that: stat_conkyrc.stat.mode == '0700'
+      that: stat_tint2rc.stat.mode == '0700'
