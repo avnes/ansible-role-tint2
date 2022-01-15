@@ -1,12 +1,12 @@
-master: [![Build Status](https://travis-ci.org/avnes/ansible-role-tint2.png?branch=master)](https://travis-ci.org/avnes/ansible-role-tint2) develop: [![Build Status](https://travis-ci.org/avnes/ansible-role-tint2.png?branch=develop)](https://travis-ci.org/avnes/ansible-role-tint2)
-
 # ansible-role-tint2
+
+![Ansible](https://github.com/avnes/ansible-role-tint2/actions/workflows/ansible.yaml/badge.svg)
 
 Ansible role for installing tint2 and performing basic setup and configuration.
 
 ## Requirements
 
-None.
+Poetry. Install it from <https://python-poetry.org/docs/>
 
 ## Role Variables
 
@@ -40,12 +40,17 @@ None
      - { role: avnes.ansible-role-tint2 }
 ```
 
+## For pip compability
+
+```bash
+poetry export --dev --output requirements.txt
+```
+
 ## Test
 
 ```bash
-virtualenv ~/.virtualenv/ansible-role-tint2
-source ~/.virtualenv/ansible-role-tint2/bin/activate
-pip install -r requirements.txt
+poetry install
+poetry shell
 molecule test
 ```
 
@@ -55,4 +60,4 @@ MIT
 
 ## Author Information
 
-<https://github.com/avnes>
+<https://github.com/avnes/>
