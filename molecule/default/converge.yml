@@ -11,5 +11,5 @@
       - '/usr/share/applications/lxterminal.desktop'
   tasks:
     - name: "Include ansible-role-tint2"
-      include_role:
+      ansible.builtin.include_role:
         name: "ansible-role-tint2"
