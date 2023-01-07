@@ -6,33 +6,33 @@
     name: "{{ item.name }}"
     state: "{{ item.state }}"
   with_items:
-  - { name: 'tint2', state: 'present' }
+    - { name: "tint2", state: "present" }
 
 - name: Install software on openSUSE
   when: ansible_os_family == 'Suse'
   become: true
-  ansible.builtin.zypper:
+  community.general.zypper:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
   with_items:
-  - { name: 'tint2', state: 'present' }
-  - { name: 'tint2-lang', state: 'present' }
+    - { name: "tint2", state: "present" }
+    - { name: "tint2-lang", state: "present" }
 
 - name: Update software cache for pacman
   when: ansible_distribution == 'ArchLinux'
   become: true
-  ansible.builtin.pacman:
+  community.general.pacman:
     update_cache: yes
   changed_when: false
 
 - name: Install software on ArchLinux
   when: ansible_distribution == 'ArchLinux'
   become: true
-  ansible.builtin.pacman:
+  community.general.pacman:
     name: "{{ item.name }}"
     state: "{{ item.state }}"
   with_items:
-  - { name: 'tint2', state: 'present' }
+    - { name: "tint2", state: "present" }
 
 - name: Update software cache for apt-get
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
@@ -48,7 +48,7 @@
     name: "{{ item.name }}"
     state: "{{ item.state }}"
   with_items:
-  - { name: 'tint2', state: 'present' }
+    - { name: "tint2", state: "present" }
 
 - name: Install software on Debian
   when: ansible_distribution == 'Debian'
@@ -57,7 +57,7 @@
     name: "{{ item.name }}"
     state: "{{ item.state }}"
   with_items:
-  - { name: 'tint2', state: 'present' }
+    - { name: "tint2", state: "present" }
 
 - name: Make sure config directory exist
   ansible.builtin.file:
